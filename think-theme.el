@@ -122,6 +122,13 @@
    ;; Org
    `(org-headline-done                    ((t (:foreground ,comment))))
 
+   ;; Ido
+   `(ido-subdir                           ((t (:foreground ,fg :bold t))))
+   `(ido-first-match                      ((t (:foreground ,keyword))))
+   `(ido-only-match                       ((t (:foreground ,keyword))))
+   `(ido-indicator                        ((t (:foreground ,constant))))
+   `(ido-incomplete-regexp                ((t (:foreground ,warning))))
+
    ;; Flycheck
    `(flycheck-info                        ((t (:underline ,t))))
    `(flycheck-warning                     ((t (:underline ,t ))))
