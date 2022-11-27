@@ -37,12 +37,12 @@
       (bg-lighter      "#444444")
       (cursor          "#ff4500")
       (region          "#3a3a3a")
+      (attention       "#ff5f00")
       (keyword         "#afaf5f")
       (constant        "#d7af5f")
       (comment         "#af875f")
       (string          "#8fbc8f")
-      (warning         "#d75f00")
-      )
+      (warning         "#d75f00"))
   (custom-theme-set-faces
    'think
 
@@ -68,11 +68,11 @@
    `(font-lock-preprocessor-face          ((t (:foreground ,constant))))
 
    ;; Line numbers
-   `(line-number                  ((t (:foreground ,fg  :background ,bg-lighter))))
-   `(line-number-current-line     ((t (:foreground ,fg-darker :background ,bg-darker))))
+   `(line-number                          ((t (:foreground ,fg  :background ,bg-lighter))))
+   `(line-number-current-line             ((t (:foreground ,fg-darker :background ,bg-darker))))
 
    ;; Help
-   `(help-key-binding                    ((t (:foreground ,string))))
+   `(help-key-binding                     ((t (:foreground ,string))))
 
    ;; Flyspell
    `(flyspell-incorrect                   ((t (:underline ,t))))
@@ -92,12 +92,13 @@
    `(minibuffer-prompt                    ((t (:foreground ,keyword :bold t))))
 
    ;; Matching Parenthesis
-   `(show-paren-match                     ((t (:foreground ,keyword :background ,region :bold t))))
+   `(show-paren-match                     ((t (:foreground ,attention :background ,region :bold t))))
    `(show-paren-match-face                ((t (:foreground ,keyword :background ,region :bold t))))
 
    ;; I-Search, Highlighting
    `(isearch                              ((t (:foreground ,keyword :background ,region :bold t))))
-   `(lazy-highlight                       ((t (:foreground ,fg :background ,region))))
+   `(isearch-fail                         ((t (:foreground ,warning :background ,region :bold t))))
+   `(lazy-highlight                       ((t (:foreground ,attention :background ,region))))
    `(highlight                            ((t (:foreground ,fg :background ,region))))
 
    ;; Completions, shows available completions
@@ -131,10 +132,25 @@
 
    ;; Flycheck
    `(flycheck-info                        ((t (:underline ,t))))
-   `(flycheck-warning                     ((t (:underline ,t ))))
+   `(flycheck-warning                     ((t (:underline ,t))))
    `(flycheck-error                       ((t (:underline ,t))))
 
    ;; Magit
+   `(magit-section-highlight              ((t (:background ,region))))
+   `(magit-section                        ((t (:background ,nil :foreground ,fg))))
+   `(magit-diff-hunk-heading-highlight    ((t (:background ,region :foreground ,fg))))
+   `(magit-diff-hunk-heading              ((t (:background ,nil :foreground ,fg))))
+   `(magit-diff-context-highlight         ((t (:background ,region :foreground ,fg))))
+   `(magit-diff-context                   ((t (:background ,nil :foreground ,fg))))
+
+   ;; Web Mode
+   `(web-mode-html-tag-bracket-face       ((t (:foreground ,fg))))
+   `(web-mode-html-tag-face               ((t (:foreground ,fg))))
+   `(web-mode-html-attr-name-face         ((t (:foreground ,keyword))))
+
+   ;; Cider
+   `(cider-enlightened-face               ((t (:background ,bg))))
+   `(cider-result-overlay-face            ((t (:background ,bg))))
    )
   )
 
