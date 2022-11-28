@@ -130,6 +130,9 @@
    `(ido-indicator                        ((t (:foreground ,constant))))
    `(ido-incomplete-regexp                ((t (:foreground ,warning))))
 
+   ;; GNU Make
+   `(makefile-targets                     ((t (:foreground ,keyword))))
+
    ;; Flycheck
    `(flycheck-info                        ((t (:underline ,t))))
    `(flycheck-warning                     ((t (:underline ,t))))
